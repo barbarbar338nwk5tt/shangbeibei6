@@ -1,0 +1,41 @@
+#BNF+IAT 1.0 UTF-8;
+!grammar drone;
+
+!slot <dronePhoto>;
+
+!slot <droneRecordPre>;
+!slot <droneRecord>;
+
+!slot <droneCmdPre>;
+!slot <droneCmd>;
+
+!slot <droneFlyPre>;
+!slot <droneFly>;
+!slot <droneFlyEnd>;
+
+!slot <droneNumber>;
+!slot <droneUnit>;
+
+!slot <droneRotate>;
+!slot <droneRotateNum>;
+!slot <droneRotateU>;
+
+!start <droneRule>;
+<droneRule>:<dronePhoto>|[<droneRecordPre>]<droneRecord>|<droneRecord>|[<droneCmdPre>]<droneCmd>|<droneCmd>|[<droneFlyPre>]<droneFly>[<droneFlyEnd>][<droneNumber>][<droneUnit>]|<droneFly>|<droneRotate>[<droneRotateNum>][<droneRotateU>];
+
+<droneCmdPre>:一键|自动;
+<droneCmd>:起飞|降落|返航;
+
+<dronePhoto>:拍个照|拍照;
+<droneRecordPre>:开始|停止|结束;
+<droneRecord>:录像|录下像;
+
+<droneFlyPre>:向|往|朝;
+<droneFly>:左|右|上|下|上升|下降|前|后|前进|后退;
+<droneFlyEnd>:飞|飞行;
+<droneNumber>:一|两|五|十|二十|五十|一百|两百|五百|一千;
+<droneUnit>:米;
+
+<droneRotate>:左旋|右旋|左转|右转|顺时针|逆时针|掉头;
+<droneRotateNum>:四十五|九十|一百八;
+<droneRotateU>:度;

@@ -1,0 +1,6 @@
+#BNF+IAT 1.0 UTF-8;
+!grammar commanden;
+!slot <commandWord>;
+!start <commanden>;
+<commanden>:<commandWord>;
+<commandWord>:"take a photo"|"start recording"|"stop recording"|"auto take off"|"auto return";
